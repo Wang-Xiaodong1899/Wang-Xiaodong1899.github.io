@@ -1,37 +1,17 @@
-## Welcome to GitHub Pages
+## Xiaodong Wang's Page
 
-You can use the [editor on GitHub](https://github.com/Wang-Xiaodong1899/Wang-Xiaodong1899.github.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
+### Information
+Xiaodong Wang (王晓东) is currently a master student in Software Engineering in [Peking University](https://pku.edu.cn), [School of Software and Microelectronics](https://ss.pku.edu.cn). His superviser is [Yuejian Fang](https://ss.pku.edu.cn/teacherteam/teacherlist/1612-方跃坚.html).
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Publications
 
-### Markdown
+[1] Visual-ChatGPT: Visual ChatGPT: Talking, Drawing and Editing with Visual Foundation Models. ([Preprint 2023.03](https://arxiv.org/abs/2303.04671))   
+Chenfei Wu, Shengming Yin, Weizhen Qi, **Xiaodong Wang**, Zeceng Tang, Nan Duan.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+[Github](https://github.com/microsoft/visual-chatgpt) 21.5k Star [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue)](https://huggingface.co/spaces/microsoft/visual_chatgpt) [![Open 2k image generation in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/11BtP3h-w0dZjA-X8JsS9_eo8OeGYvxXB)
 
-```markdown
-Syntax highlighted code block
+[2] Learning 3D Photography Videos via Self-supervised Diffusion on Single Images. ([Preprint 2023.02](https://arxiv.org/abs/2302.10781))   
+Xiaodong Wang, Chenfei Wu, Shengming Yin, Minheng Ni, Jianfeng Wang, Linjie Li, Zhengyuan Yang, Fan Yang, Lijuan Wang, Zicheng Liu, Yuejian Fang, Nan Duan
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Wang-Xiaodong1899/Wang-Xiaodong1899.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+### Honor
+[1] Merit Student of Peking University, 2021-2022.
