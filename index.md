@@ -16,7 +16,7 @@ Chenfei Wu, Shengming Yin, Weizhen Qi, **Xiaodong Wang**, Zeceng Tang, Nan Duan
 [3] Revisiting Unsupervised Domain Adaptation Models: a Smoothness Perspective. \[[ACCV 2022](https://openaccess.thecvf.com/content/ACCV2022/html/Wang_Revisiting_Unsupervised_Domain_Adaptation_Models_a_Smoothness_Perspective_ACCV_2022_paper.html)\] \[[Github](https://github.com/Wang-Xiaodong1899/LeCo_UDA)\]  
 **Xiaodong Wang**, Junbao Zhuo, Mengru Zhang, Shuhui Wang, Yuejian Fang
 
-[4] Learning Invariant Representation with Consistency and Diversity for Semi-supervised Source Hypothesis Transfer. \[[Arxiv 2021](https://arxiv.org/abs/2107.03008)\] \[[Github](https://github.com/Wang-Xiaodong1899/SSHT)\]
+[4] Learning Invariant Representation with Consistency and Diversity for Semi-supervised Source Hypothesis Transfer. \[[Arxiv 2021](https://arxiv.org/abs/2107.03008)\] \[[Github](https://github.com/Wang-Xiaodong1899/SSHT)\]   
 **Xiaodong Wang**, Junbao Zhuo, Shuhao Cui, Shuhui Wang
 
 ### Honors
