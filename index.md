@@ -1,5 +1,5 @@
 ## Xiaodong Wang's Page
-Xiaodong Wang (王晓东) is currently a master student in Software Engineering in [Peking University](https://pku.edu.cn), [School of Software and Microelectronics](https://ss.pku.edu.cn). His superviser is [Yuejian Fang](https://ss.pku.edu.cn/teacherteam/teacherlist/1612-方跃坚.html). He recievd my Bachelor's degree in Data Science & Big Data Technology from Beijing Information Science and Technology University ([BISTU](https://bistu.edu.cn)). 
+Xiaodong Wang (王晓东) is currently a master student in Software Engineering in [Peking University](https://pku.edu.cn), [School of Software and Microelectronics](https://ss.pku.edu.cn). His superviser is [Yuejian Fang](https://ss.pku.edu.cn/teacherteam/teacherlist/1612-方跃坚.html). He recievd the Bachelor's degree in Data Science & Big Data Technology from Beijing Information Science and Technology University ([BISTU](https://bistu.edu.cn)). 
 
 
 Now he is a research intern in Natural Language Computer Group, Microsoft Research Asia (MSRA).
