@@ -1,5 +1,5 @@
 ## Xiaodong Wang's Page
-Xiaodong Wang (王晓东) is currently a master student in Software Engineering in [Peking University](https://www.pku.edu.cn), [School of Software and Microelectronics](https://ss.pku.edu.cn). His superviser is [Yuejian Fang](https://ss.pku.edu.cn/teacherteam/teacherlist/1612-方跃坚.html). He recievd the Bachelor's degree in Data Science & Big Data Technology from Beijing Information Science and Technology University ([BISTU](https://www.bistu.edu.cn)). He has worked as an intern at [MegVII,(旷视)](https://www.megvii.com) and [Institute of Computing at the Chinese Academy of Sciences,(中科院计算技术研究所)](http://www.ict.cas.cn).
+Xiaodong Wang (王晓东) is currently a master student in Software Engineering from [School of Software and Microelectronics](https://ss.pku.edu.cn), [Peking University](https://www.pku.edu.cn). His superviser is [Yuejian Fang](https://ss.pku.edu.cn/teacherteam/teacherlist/1612-方跃坚.html). He recievd the Bachelor's degree in Data Science & Big Data Technology from Beijing Information Science and Technology University ([BISTU](https://www.bistu.edu.cn)). He once worked as an intern at [MegVII,(旷视)](https://www.megvii.com) and [Institute of Computing at the Chinese Academy of Sciences,(中科院计算技术研究所)](http://www.ict.cas.cn).
 
 [Scholar](https://scholar.google.com/citations?user=BEI2qi8AAAAJ&hl=en) | [Github](https://github.com/Wang-Xiaodong1899)
 
@@ -8,7 +8,7 @@ Now he is a research intern in Natural Language Computer Group, Microsoft Resear
 
 ### Publications
 
-[1] Visual ChatGPT: Talking, Drawing and Editing with Visual Foundation Models. \[[Preprint 2023.03](https://arxiv.org/abs/2303.04671)\] \[[Github](https://github.com/microsoft/visual-chatgpt) 21.5k Stars\] [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue)](https://huggingface.co/spaces/microsoft/visual_chatgpt) [![Open 2k image generation in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/11BtP3h-w0dZjA-X8JsS9_eo8OeGYvxXB)   
+[1] Visual ChatGPT: Talking, Drawing and Editing with Visual Foundation Models. \[[Preprint 2023.03](https://arxiv.org/abs/2303.04671)\] \[[Github](https://github.com/microsoft/visual-chatgpt) 21.6k Stars\] [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue)](https://huggingface.co/spaces/microsoft/visual_chatgpt) [![Open 2k image generation in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/11BtP3h-w0dZjA-X8JsS9_eo8OeGYvxXB)   
 Chenfei Wu, Shengming Yin, Weizhen Qi, **Xiaodong Wang**, Zecheng Tang, Nan Duan
 
 
