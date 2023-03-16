@@ -7,7 +7,7 @@ Now he is a research intern in Natural Language Computer Group, Microsoft Resear
 ### Publications
 
 [1] Visual ChatGPT: Talking, Drawing and Editing with Visual Foundation Models. \[[Preprint 2023.03](https://arxiv.org/abs/2303.04671)\] \[[Github](https://github.com/microsoft/visual-chatgpt) 21.5k Stars\] [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue)](https://huggingface.co/spaces/microsoft/visual_chatgpt) [![Open 2k image generation in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/11BtP3h-w0dZjA-X8JsS9_eo8OeGYvxXB)   
-Chenfei Wu, Shengming Yin, Weizhen Qi, **Xiaodong Wang**, Zeceng Tang, Nan Duan
+Chenfei Wu, Shengming Yin, Weizhen Qi, **Xiaodong Wang**, Zecheng Tang, Nan Duan
 
 
 [2] Learning 3D Photography Videos via Self-supervised Diffusion on Single Images. \[[Preprint 2023.02](https://arxiv.org/abs/2302.10781)\]   
