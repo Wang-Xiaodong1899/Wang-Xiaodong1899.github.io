@@ -1,5 +1,5 @@
 ## Xiaodong Wang's Page
-Xiaodong Wang (王晓东) is currently a master student in Software Engineering in [Peking University](https://pku.edu.cn), [School of Software and Microelectronics](https://ss.pku.edu.cn). His superviser is [Yuejian Fang](https://ss.pku.edu.cn/teacherteam/teacherlist/1612-方跃坚.html). He recievd the Bachelor's degree in Data Science & Big Data Technology from Beijing Information Science and Technology University ([BISTU](https://bistu.edu.cn)). He has worked as an intern at [MegVII,(旷视)](https://www.megvii.com) and [Institute of Computing at the Chinese Academy of Sciences,(中科院计算技术研究所)](http://www.ict.cas.cn).
+Xiaodong Wang (王晓东) is currently a master student in Software Engineering in [Peking University](https://www.pku.edu.cn), [School of Software and Microelectronics](https://ss.pku.edu.cn). His superviser is [Yuejian Fang](https://ss.pku.edu.cn/teacherteam/teacherlist/1612-方跃坚.html). He recievd the Bachelor's degree in Data Science & Big Data Technology from Beijing Information Science and Technology University ([BISTU](https://www.bistu.edu.cn)). He has worked as an intern at [MegVII,(旷视)](https://www.megvii.com) and [Institute of Computing at the Chinese Academy of Sciences,(中科院计算技术研究所)](http://www.ict.cas.cn).
 
 
 Now he is a research intern in Natural Language Computer Group, Microsoft Research Asia (MSRA).
@@ -20,7 +20,7 @@ Chenfei Wu, Shengming Yin, Weizhen Qi, **Xiaodong Wang**, Zecheng Tang, Nan Duan
 **Xiaodong Wang**, Junbao Zhuo, Shuhao Cui, Shuhui Wang
 
 ### Honors
-- Merit Student of Peking University, 2021-2022
-- Beijing Outstanding Graduates, 2021
-- President Scholarship of BISTU, 2020
-- National Scholarship, 2019
+- Merit Student of Peking University (北京大学三好学生), 2022
+- Beijing Outstanding Graduates (北京市优秀毕业生), 2021
+- President Scholarship of BISTU (校长奖学金), 2020
+- National Scholarship (国家奖学金), 2019
