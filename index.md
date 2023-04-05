@@ -7,7 +7,7 @@ Xiaodong Wang (王晓东) is currently a second-year master student in Software 
 
 Now he is a research intern in NUWA team, Natural Language Computer Group, Microsoft Research Asia (MSRA).
 
-<font color=Red>**[NOTE]**</font> He is now actively seeking for an opportunity to be a **PhD candidate starting 2024, focusing on image or video synthesis, multimedia pretraining, diffusion model, etc. If you have any related opportunities, He would appreciates it if you could reach him out via email.
+<font color=Red>**[NOTE]**</font> He is now actively seeking for an opportunity to be a PhD candidate starting 2024, focusing on image or video synthesis, multimedia pretraining, diffusion model, etc. If you have any related opportunities, He would appreciates it if you could reach him out via email.
 
 ### Publications
 - NUWA-XL: Diffusion over Diffusion for eXtremely Long Video Generation. \[[Preprint 2023.03](https://arxiv.org/abs/2303.12346)\] \[[Homepage](https://msra-nuwa.azurewebsites.net/#/)\]  
