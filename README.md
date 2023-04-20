@@ -17,7 +17,7 @@ Now he is a research intern in NUWA team, Natural Language Computer Group, Micro
 Shengming Yin, Chenfei Wu, Huan Yang, Jianfeng Wang, **Xiaodong Wang**, Minheng Ni, Zhengyuan Yang, Linjie Li, Shuguang Liu, Fan Yang, Jianlong Fu, Gong Ming, Lijuan Wang, Zicheng Liu, Houqiang Li, Nan Duan   
 
 - Visual ChatGPT: Talking, Drawing and Editing with Visual Foundation Models. \[[Preprint 2023.03](https://arxiv.org/abs/2303.04671)]   
-[![Github Stars](https://img.shields.io/github/stars/microsoft/TaskMatrix.svg)](https://github.com/microsoft/TaskMatrix) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue)](https://huggingface.co/spaces/microsoft/visual_chatgpt) [![Open 2k image generation in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/11BtP3h-w0dZjA-X8JsS9_eo8OeGYvxXB)   
+[![Github Stars](https://img.shields.io/github/stars/microsoft/TaskMatrix.svg)](https://github.com/microsoft/TaskMatrix) [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue)](https://huggingface.co/spaces/microsoft/visual_chatgpt) [![Open 2k image generation in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1P3jJqKEWEaeNcZg8fODbbWeQ3gxOHk2-?usp=sharing)   
 Chenfei Wu, Shengming Yin, Weizhen Qi, **Xiaodong Wang**, Zecheng Tang, Nan Duan  
 
 - Revisiting Unsupervised Domain Adaptation Models: a Smoothness Perspective. \[[ACCV 2022](https://openaccess.thecvf.com/content/ACCV2022/html/Wang_Revisiting_Unsupervised_Domain_Adaptation_Models_a_Smoothness_Perspective_ACCV_2022_paper.html)\] \[[Github](https://github.com/Wang-Xiaodong1899/LeCo_UDA)\]  
