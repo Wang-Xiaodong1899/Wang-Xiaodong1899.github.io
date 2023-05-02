@@ -10,10 +10,10 @@ Now he is a research intern in NUWA team, Natural Language Computer Group, Micro
 <font color=Red>**[NOTE]**</font> He is now actively seeking for an opportunity to be a PhD candidate starting 2024, focusing on image or video synthesis, multimedia pretraining, diffusion model, etc. If you have any related opportunities, He would appreciate it if you could reach him out via email.
 
 ### Publications
-- **Learning 3D Photography Videos via Self-supervised Diffusion on Single Images** \[[IJCAI 2023](https://arxiv.org/abs/2302.10781)\]   
+- **Learning 3D Photography Videos via Self-supervised Diffusion on Single Images (NUWA-3D)** \[[IJCAI 2023](https://arxiv.org/abs/2302.10781)\]   
 **Xiaodong Wang**, Chenfei Wu, Shengming Yin, Minheng Ni, Jianfeng Wang, Linjie Li, Zhengyuan Yang, Fan Yang, Lijuan Wang, Zicheng Liu, Yuejian Fang, Nan Duan
 
-- **NUWA-XL: Diffusion over Diffusion for eXtremely Long Video Generation** \[[Preprint 2023.03](https://arxiv.org/abs/2303.12346)\] \[[Homepage](https://msra-nuwa.azurewebsites.net/#/)\]  
+- **NUWA-XL: Diffusion over Diffusion for eXtremely Long Video Generation** \[[ACL 2023](https://arxiv.org/abs/2303.12346)\] \[[Homepage](https://msra-nuwa.azurewebsites.net/#/)\]  
 Shengming Yin, Chenfei Wu, Huan Yang, Jianfeng Wang, **Xiaodong Wang**, Minheng Ni, Zhengyuan Yang, Linjie Li, Shuguang Liu, Fan Yang, Jianlong Fu, Gong Ming, Lijuan Wang, Zicheng Liu, Houqiang Li, Nan Duan   
 
 - **Visual ChatGPT: Talking, Drawing and Editing with Visual Foundation Models** \[[Preprint 2023.03](https://arxiv.org/abs/2303.04671)]   
