@@ -5,9 +5,9 @@ Xiaodong Wang (王晓东) is currently a second-year master student in Software 
 <a href="https://github.com/Wang-Xiaodong1899"><img src="https://img.shields.io/badge/Github-yellow" alt="Email" /> <a href="mailto:wangxd220@gmail.com"><img src="https://img.shields.io/badge/Email-wangxd220@gmail.com-pink" alt="Email" /></a>
 
 
-Now he is a research intern in NUWA team, Natural Language Computer Group, Microsoft Research Asia (MSRA).
+Now he is a research intern in NUWA team, Natural Language Computer Group, Microsoft Research Asia (MSRA), supervised by [Chenfei Wu](https://chenfei-wu.github.io/) and [Nan Duan](https://nanduan.github.io/).
 
-<font color=Red>**[NOTE]**</font> He is now actively seeking for an opportunity to be a PhD candidate starting 2024, focusing on image or video synthesis, multimedia pretraining, diffusion model, etc. If you have any related opportunities, He would appreciate it if you could reach him out via email.
+He is now actively seeking for an opportunity to be a PhD candidate starting 2024, focusing on image or video synthesis, multimedia pretraining, diffusion model, etc. If you have any related opportunities, He would appreciate it if you could reach him out via email.
 
 ### Publications
 - **Learning 3D Photography Videos via Self-supervised Diffusion on Single Images (NUWA-3D)** \[[IJCAI 2023](https://arxiv.org/abs/2302.10781)\] \[[supple](./assets/IJCAI23_supple.pdf)\]   
