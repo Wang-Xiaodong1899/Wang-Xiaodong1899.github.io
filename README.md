@@ -1,15 +1,15 @@
 ## Xiaodong Wang's Page
 Xiaodong Wang (王晓东) is currently a second-year master student in Software Engineering from [School of Software and Microelectronics](https://ss.pku.edu.cn), [Peking University](https://www.pku.edu.cn). His superviser is [Yuejian Fang](https://ss.pku.edu.cn/teacherteam/teacherlist/1612-方跃坚.html). He recievd the Bachelor's degree in Data Science & Big Data Technology from Beijing Information Science and Technology University ([BISTU](https://www.bistu.edu.cn)) at 2021. He once worked as an intern at [MegVII](https://www.megvii.com) and [Institute of Computing Technology at the Chinese Academy of Sciences](http://www.ict.cas.cn).
 
-<a href="https://scholar.google.com/citations?user=BEI2qi8AAAAJ&hl=en"><img src="https://img.shields.io/badge/Scholar-blueviolet" alt="Email" /></a>
+<a href="https://scholar.google.com/citations?user=BEI2qi8AAAAJ&hl=en"><img src="https://img.shields.io/badge/Scholar-blueviolet" alt="Scholar" /></a>
 <a href="https://github.com/Wang-Xiaodong1899"><img src="https://img.shields.io/badge/Github-yellow" alt="Email" /> <a href="mailto:wangxd220@gmail.com"><img src="https://img.shields.io/badge/Email-wangxd220@gmail.com-pink" alt="Email" /></a>
 
 \*******************************************************************************************************************************************************   
-**\[Update!!!\]** He is now actively seeking for an opportunity to be a **Ph.D. candidate** starting **2024**, focusing on **Visual Synthesis**, **Large Language Model + Vision**, **Multimedia Pretraining**, etc. If you have any related opportunities, he would very appreciate it if you reach out to him via email.    
+**\[Update!!!\]** He is now actively seeking an opportunity to be a **Ph.D. candidate** starting **2024**, focusing on **Visual Synthesis**, **Large Language Model + Vision**, **Multimedia Pretraining**, etc. If you have any related opportunities, he would very appreciate it if you reach out to him via email.    
 \*******************************************************************************************************************************************************
 
 ### Education
-- Master Student. **Peking University**. 2021-2024    
+- Master Student. **Peking University**. 2021 - 2024    
 - Bachelor's degree. **Beijing Information Science and Technology University**. 2017 - 2021
 
 ### Internship
