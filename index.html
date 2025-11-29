@@ -1,207 +1,962 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
-  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
-  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-  <link rel="stylesheet" href="jemdoc.css" type="text/css" />
-  <title>Xiaodong Wang's Homepage</title>
+  <meta charset="UTF-8" />
+    <title>Xiaodong Wang | Video Understanding & Generation</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23ff9ff3'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-size='70'%3E🎨%3C/text%3E%3C/svg%3E">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+        content="Xiaodong Wang (王晓东), Ph.D. candidate in the School of Computer Science, Peking University. Research on Video Understanding and Generation." />
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --card-bg: #ffffff;
+      --accent: #3f51b5;
+      --accent-soft: rgba(63, 81, 181, 0.08);
+      --text-main: #222222;
+      --text-sub: #555555;
+      --border-soft: #e2e6f0;
+      --code-bg: #f0f2f8;
+      --shadow-soft: 0 14px 30px rgba(15, 23, 42, 0.12);
+      --radius-lg: 18px;
+      --radius-pill: 999px;
+      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--font-main);
+      color: var(--text-main);
+      background: radial-gradient(circle at top left, #dde5ff 0, var(--bg) 38%, #fefefe 100%);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    body {
+      padding: 20px;
+    }
+
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Top navigation */
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .logo-mark {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 11px;
+      padding: 6px 10px;
+      border-radius: var(--radius-pill);
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid var(--accent-soft);
+      backdrop-filter: blur(12px);
+    }
+
+    .logo-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px var(--accent-soft);
+    }
+
+    .top-nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      font-size: 13px;
+    }
+
+    .top-nav a {
+      padding: 6px 10px;
+      border-radius: var(--radius-pill);
+      border: 1px solid transparent;
+      color: var(--text-sub);
+    }
+
+    .top-nav a:hover {
+      border-color: var(--accent-soft);
+      background: rgba(255, 255, 255, 0.9);
+      text-decoration: none;
+      color: var(--accent);
+    }
+
+    /* Hero / profile */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.1fr);
+      gap: 26px;
+      padding: 24px 22px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.86);
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--border-soft);
+    }
+
+    @media (max-width: 720px) {
+      body {
+        padding: 12px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 18px 16px;
+      }
+    }
+
+    .hero-left h1 {
+      margin: 0 0 4px;
+      font-size: 26px;
+    }
+
+    .hero-left .name-sub {
+      font-size: 14px;
+      color: var(--text-sub);
+      margin-bottom: 12px;
+    }
+
+    .tagline {
+      font-size: 15px;
+      color: var(--text-sub);
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+
+    .hero-meta {
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+
+    .hero-meta a {
+      font-weight: 500;
+    }
+
+    .emails {
+      font-size: 13px;
+      color: var(--text-sub);
+      margin-top: 4px;
+      line-height: 1.5;
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+      font-size: 12px;
+    }
+
+    .chip {
+      padding: 4px 9px;
+      border-radius: var(--radius-pill);
+      background: var(--accent-soft);
+      color: #1b2559;
+      border: 1px solid rgba(63, 81, 181, 0.22);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      white-space: nowrap;
+    }
+
+    .hero-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .pill-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 13px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border-soft);
+      background: #f7f8ff;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-main);
+    }
+
+    .pill-link span.icon {
+      font-size: 14px;
+    }
+
+    .pill-link.primary {
+      background: var(--accent);
+      color: #ffffff;
+      border-color: var(--accent);
+    }
+
+    .pill-link.primary:hover {
+      background: #2f3fa6;
+    }
+
+    .pill-link:hover {
+      text-decoration: none;
+      border-color: var(--accent-soft);
+      background: #ffffff;
+    }
+
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .avatar-wrap {
+      width: 180px;
+      height: 180px;
+      border-radius: 26px;
+      overflow: hidden;
+      border: 2px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.28);
+      background: #c2c9ff;
+    }
+
+    .avatar-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .side-note {
+      font-size: 12px;
+      color: var(--text-sub);
+      text-align: center;
+      padding: 6px 10px;
+      border-radius: var(--radius-pill);
+      background: #f5f6ff;
+    }
+
+    /* Sections */
+    main {
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    section {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-soft);
+      padding: 18px 18px 16px;
+    }
+
+    section h2 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    section h2 span.emoji {
+      font-size: 18px;
+    }
+
+    section p {
+      font-size: 14px;
+      line-height: 1.7;
+      margin: 0 0 8px;
+      color: var(--text-sub);
+    }
+
+    ul {
+      margin: 6px 0 8px;
+      padding-left: 18px;
+    }
+
+    ul li {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text-sub);
+      margin-bottom: 4px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 14px;
+    }
+
+    @media (max-width: 720px) {
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Research area tags */
+    .topic-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+      margin-bottom: 4px;
+    }
+
+    .topic-tag {
+      font-size: 12px;
+      padding: 3px 9px;
+      border-radius: var(--radius-pill);
+      background: #f3f4ff;
+      border: 1px dashed #c2c7ff;
+      color: #1c2654;
+    }
+
+    /* Education & Experience cards */
+    .edu-item,
+    .exp-item {
+      padding: 9px 10px;
+      border-radius: 12px;
+      border: 1px solid rgba(226, 231, 245, 0.95);
+      background: #fafbff;
+      margin-bottom: 8px;
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 10px 14px;
+      align-items: center;
+    }
+
+    .edu-logo,
+    .exp-logo {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #e3e7ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .edu-logo img,
+    .exp-logo img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .edu-main,
+    .exp-main {
+      font-size: 14px;
+    }
+
+    .edu-main .title,
+    .exp-main .title {
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .edu-main .meta,
+    .exp-main .meta {
+      font-size: 13px;
+      color: var(--text-sub);
+      margin-bottom: 2px;
+    }
+
+    .edu-main .date,
+    .exp-main .date {
+      font-size: 12px;
+      color: #6b7280;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 600px) {
+      .edu-item,
+      .exp-item {
+        grid-template-columns: 1fr;
+      }
+
+      .edu-main .date,
+      .exp-main .date {
+        white-space: normal;
+      }
+    }
+
+    /* Publications */
+    .pub-note {
+      font-size: 12px;
+      color: var(--text-sub);
+      margin-bottom: 6px;
+    }
+
+    .pub-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .pub-item {
+      padding: 8px 10px;
+      border-radius: 11px;
+      border: 1px solid #e3e6f6;
+      background: #fbfcff;
+      margin-bottom: 7px;
+    }
+
+    .pub-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #3b3f68;
+      margin-bottom: 3px;
+    }
+
+    .pub-authors {
+      font-size: 13px;
+      color: #4b5563;
+      margin-bottom: 2px;
+    }
+
+    .pub-venue {
+      font-size: 12px;
+      color: #6b7280;
+      margin-bottom: 3px;
+    }
+
+    .pub-links a {
+      font-size: 12px;
+      margin-right: 6px;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 11px;
+      padding: 2px 7px;
+      border-radius: var(--radius-pill);
+      background: #eef2ff;
+      color: #3730a3;
+      margin-left: 6px;
+    }
+
+    /* Awards & service */
+    .pill-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .pill-list li {
+      padding: 4px 9px;
+      border-radius: var(--radius-pill);
+      background: #f3f4ff;
+      border: 1px solid #e0e3ff;
+      font-size: 12px;
+      color: var(--text-sub);
+    }
+
+    .award-list {
+      list-style: none;
+      padding: 0;
+      margin: 4px 0 0;
+    }
+
+    .award-list li {
+      font-size: 13px;
+      color: var(--text-sub);
+      margin-bottom: 2px;
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .award-year {
+      font-size: 12px;
+      color: #6b7280;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 600px) {
+      .award-list li {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .award-year {
+        white-space: normal;
+      }
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 16px;
+      font-size: 11px;
+      text-align: center;
+      color: #9ca3af;
+      padding-bottom: 8px;
+    }
+  </style>
 </head>
-
 <body>
-  <table summary="Table for page layout." id="tlayout">
-    <tr valign="top">
-      <td id="layout-menu">
-        <div class="menu-category">menu</div>
-        <div class="menu-item"><a href="index.html" class="current">Home</a></div>
-        <div class="menu-item"><a href="#publication">Publication</a></div>
-        <div class="menu-category">useful links</div>
-        <div class="menu-item"><a href="https://github.com/Wang-Xiaodong1899" target="_blank">Github</a></div>
-        <div class="menu-item"><a href="https://scholar.google.com/citations?user=BEI2qi8AAAAJ&hl=en" target="_blank">Google Scholar</a></div>
-        <div class="menu-item"><a href="https://wang-xiaodong1899.github.io/assets/CV_王晓东.pdf" target="_blank">CV_zh_CN</a></div>
-        <div class="menu-item"><a href="https://wang-xiaodong1899.github.io/assets/CV_Xiaodong%20Wang.pdf" target="_blank">CV_EN</a></div>
-      </td>
-      <td id="layout-content">
+  <div class="page">
+    <header>
+      <div class="top-bar">
+        <div class="logo-mark">
+          <div class="logo-dot"></div>
+          <span>Xiaodong Wang · 王晓东</span>
+        </div>
+        <nav class="top-nav">
+          <a href="#about">About</a>
+          <a href="#research">Education</a>
+          <a href="#publications">Publications</a>
+          <a href="#experience">Experience</a>
+          <a href="#awards">Awards</a>
+          <a href="#service">Service</a>
+        </nav>
+      </div>
 
-        <div id="toptitle"><h1>Xiaodong Wang (王晓东)</h1></div>
+      <div class="hero">
+        <div class="hero-left">
+          <h1>Xiaodong Wang <span style="font-size:14px; font-weight:400;">(王晓东)</span></h1>
+          <div class="name-sub">Video Understanding · Video Generation</div>
 
-        <table class="imgtable">
-          <tr>
-            <td>
-              <a href="https://wang-xiaodong1899.github.io"><img src="assets/imgs/xdw.jpg" alt="Xiaodong Wang's photo" width="200px" height="200px" /></a>&nbsp;
-            </td>
-            <td align="left">
-              <p>
-                <br>
-                Master Student<br /><br />
-                <a href="https://ss.pku.edu.cn/" target="_blank">School of Software and Microelectronics</a><br />
-                <a href="https://www.pku.edu.cn/" target="_blank">Peking University</a><br /><br />
-                Email: <i>wangxd220</i> [@] gmail.com<br />
-                Email: <i>wangxiaodong21s</i> [@] stu.pku.edu.cn
-              </p>
-            </td>
-          </tr>
-        </table>
+          <!-- <p class="tagline">
+            I build models that can <strong>see</strong>, <strong>imagine</strong>, and <strong>talk</strong> –
+            from Visual ChatGPT to long-horizon video generation.
+          </p> -->
 
-        <h2>About me</h2>
-        <p> 
-          I am currently a third-year Master student in Software Engineering from <a href="https://ss.pku.edu.cn/" target="_blank">School of Software and Microelectronics</a> at <a href="https://www.pku.edu.cn/" target="_blank">Peking University</a>, supervised by Associate Prof. <a href="https://ss.pku.edu.cn/teacherteam/teacherlist/1612-方跃坚.html" target="_blank">Yuejian Fang</a>. Before this, I recieved my Bachelor's degree in Data Science & Big Data Technology from Beijing Information Science and Technology University <a href="https://www.bistu.edu.cn" target="_blank">(BISTU) </a> in 2021.
+          <div class="hero-meta">
+            Ph.D. candidate, Computer Science<br />
+            <a href="https://cs.pku.edu.cn/" target="_blank">School of Computer Science</a> & <a href="https://www.ece.pku.edu.cn/" target="_blank">School of Electronic and Computer Engineering</a>,
+            <a href="https://www.pku.edu.cn/" target="_blank">Peking University</a><br />
+            Supervised by <a href="https://www.ece.pku.edu.cn/info/1046/2801.htm" target="_blank">Prof. Peixi Peng</a>
+          </div>
+
+          <div class="emails">
+            Email: <i>wangxd220</i> [@] gmail.com<br />
+            Email: <i>wangxiaodong21s</i> [@] stu.pku.edu.cn
+          </div>
+
+          <div class="chip-row">
+            <div class="chip">🎓 Ph.D. candidate</div>
+            <div class="chip">📍 SHENZHEN, CHINA</div>
+            <div class="chip">🔎 Vision × Language</div>
+          </div>
+
+          <div class="hero-links">
+            <a class="pill-link primary" href="https://scholar.google.com/citations?user=BEI2qi8AAAAJ&hl=en" target="_blank">
+              <span class="icon">📚</span><span>Google Scholar</span>
+            </a>
+            <a class="pill-link" href="https://github.com/Wang-Xiaodong1899" target="_blank">
+              <span class="icon">🐙</span><span>GitHub</span>
+            </a>
+            <!-- <a class="pill-link" href="https://wang-xiaodong1899.github.io/assets/CV_Xiaodong%20Wang.pdf" target="_blank">
+              <span class="icon">📄</span><span>CV (EN)</span>
+            </a>
+            <a class="pill-link" href="https://wang-xiaodong1899.github.io/assets/CV_王晓东.pdf" target="_blank">
+              <span class="icon">📄</span><span>CV (中文)</span>
+            </a> -->
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="avatar-wrap">
+            <img src="assets/imgs/xdw.jpg" alt="Portrait of Xiaodong Wang" />
+          </div>
+          <div class="side-note">
+          Taken at Tsinghua University campus
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="about">
+        <h2><span class="emoji">👋</span>About</h2>
+        <div class="two-col">
+          <div>
+            <p>
+              I am a CS Ph.D. candidate in Software Engineering in the 
+              <a href="https://cs.pku.edu.cn/" target="_blank">School of Computer Science</a> & <a href="https://www.ece.pku.edu.cn/" target="_blank">School of Electronic and Computer Engineering</a>,
+              <a href="https://www.pku.edu.cn/" target="_blank">Peking University.</a> I am fortunate to be advised by Prof. <a href="https://www.ece.pku.edu.cn/info/1046/2801.htm" target="_blank">Peixi Peng</a>.
+            </p>
+            <p>
+              Before that, I received my M.S. degree in Software Engineering from 
+              <a href="https://www.pku.edu.cn/" target="_blank">Peking University</a>, and my B.S. degree in Data Science from 
+              <a href="https://www.bistu.edu.cn" target="_blank">Beijing Information Science and Technology University</a>, 
+              graduating with the President Scholarship, the highest student honor.
+            </p>
+            <p>
+              I am currently an intern at 
+              <a href="https://www.bytedance.com/zh/" target="_blank">ByteDance</a>, 
+              serving as the student leader in a collaborative research project. Previously, I have been an intern at the 
+              <a href="https://www.msra.cn/" target="_blank">Microsoft Research Asia (MSRA)</a>, 
+              working closely with <a href="https://chenfei-wu.github.io/" target="_blank">Dr. Chenfei Wu</a> and 
+              <a href="https://nanduan.github.io/" target="_blank">Dr. Nan Duan</a>, <a href="https://www.sensetime.com/cn" target="_blank">SenseTime Research</a>, <a href="https://www.megvii.com" target="_blank">Megvii Research</a>, and 
+              <a href="http://www.ict.cas.cn" target="_blank">Institute of Computing Technology, Chinese Academy of Sciences.</a>
+              
+
+            </p>
+          </div>
+
+          <div>
+            <p><strong>Research interests</strong></p>
+            <div class="topic-tags">
+              <span class="topic-tag">Video Understanding</span>
+              <span class="topic-tag">Video Generation</span>
+            </div>
+            <p>
+              In short, I enjoy teaching models how to watch videos, imagine new worlds, and talk about them like a curious researcher.
+            </p>
+            <p>
+              <p><strong>Highlights Projects</strong></p>
+              • <a href="https://github.com/Wang-Xiaodong1899/Open-R1-Video" target="_blank">Open-R1-Video</a> (the 1st Open-Source R1-like Video-LLM, 370+ GitHub⭐)<br />
+              • <a href="https://github.com/microsoft/visual-chatgpt" target="_blank">Visual ChatGPT</a> (the 1st multimodal AI agent, 34k+ GitHub⭐, 900+ Citations📑 )<br />
+              <!-- • <a href="https://msra-nuwa.azurewebsites.net/#/" target="_blank">NUWA-XL</a> (Text-to-Video)<br />
+              • <a href="https://msra-nuwa.azurewebsites.net/#/NUWAInfinity" target="_blank">NUWA-Infinity</a> (Text-to-Image &amp; Image-to-Video) -->
+            </p>
+            <p>
+              If you see opportunities for collaboration, please feel free to email me — I'd love to have a coffee chat.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="research">
+        <h2><span class="emoji">🎓</span>Education &amp; Experiences</h2>
+        <div class="two-col">
+          <div>
+            <h3 style="font-size:14px; margin:2px 0 6px;">Education</h3>
+
+            <div class="edu-item">
+              <div class="edu-logo">
+                <img src="assets/imgs/pku.png" alt="Peking University logo" />
+              </div>
+              <div class="edu-main">
+                <div class="title">Peking University</div>
+                <div class="meta">
+                  CS Ph.D. candidate
+                  <span style="font-size:12px; margin-left:6px;"></span>
+                </div>
+                <div class="date">Sep 2024 – Jul 2028 (expected)</div>
+              </div>
+            </div>
+
+            <div class="edu-item">
+              <div class="edu-logo">
+                <img src="assets/imgs/pku.png" alt="Peking University logo" />
+              </div>
+              <div class="edu-main">
+                <div class="title">Peking University</div>
+                <div class="meta">
+                  M.S. in Software Engineering
+                  <span style="font-size:12px; margin-left:6px;">(Exam-free admission)</span>
+                </div>
+                <div class="meta">Beijing, China · GPA: 3.66 / 4.00</div>
+                <div class="date">Sep 2021 – Jul 2024</div>
+              </div>
+            </div>
+
+            <div class="edu-item">
+              <div class="edu-logo">
+                <img src="assets/imgs/bistu.jpg" alt="BISTU logo" />
+              </div>
+              <div class="edu-main">
+                <div class="title">Beijing Information Science and Technology University</div>
+                <div class="meta">B.S. in Data Science</div>
+                <div class="meta">Beijing, China · GPA: 4.43 / 5.00 · Rank: 1 / 32</div>
+                <div class="date">Sep 2017 – Jul 2021</div>
+              </div>
+            </div>
+          </div>
+
+          <div id="experience">
+            <h3 style="font-size:14px; margin:2px 0 6px;">Professional Experiences</h3>
+
+            <div class="exp-item">
+              <div class="exp-logo">
+                <img src="assets/imgs/douyin.png" alt="douyin logo" />
+              </div>
+              <div class="exp-main">
+                <div class="title">ByteDance</div>
+                <div class="meta">
+                  Research Intern, Douyin Group<br />
+                </div>
+              </div>
+            </div>
+
+            <div class="exp-item">
+              <div class="exp-logo">
+                <img src="assets/imgs/sensetime.png" alt="Sensetime logo" />
+              </div>
+              <div class="exp-main">
+                <div class="title">SenseTime</div>
+                <div class="meta">
+                  Research Intern, <a href="https://github.com/SenseTime-FVG" target="_blank">SenseTime-FVG</a><br />
+                </div>
+                <div class="date">Jan 2024 – Aug 2024 · Beijing, China</div>
+              </div>
+            </div>
+
+            <div class="exp-item">
+              <div class="exp-logo">
+                <img src="assets/imgs/msft.png" alt="Microsoft Research Asia logo" />
+              </div>
+              <div class="exp-main">
+                <div class="title">Microsoft Research Asia (MSRA)</div>
+                <div class="meta">
+                  Research Intern, Natural Language Computing Group<br />
+                  Supervised by <a href="https://chenfei-wu.github.io/" target="_blank">Chenfei Wu</a> &amp; 
+                  <a href="https://nanduan.github.io/" target="_blank">Nan Duan</a>
+                </div>
+                <div class="date">May 2022 – Nov 2023 · Beijing, China</div>
+              </div>
+            </div>
+
+            <div class="exp-item">
+              <div class="exp-logo">
+                <img src="assets/imgs/megvii.png" alt="Megvii logo" />
+              </div>
+              <div class="exp-main">
+                <div class="title">Megvii (Face Detection Team)</div>
+                <div class="meta">Algorithm Intern, Megvii Research</div>
+                <div class="date">Jun 2021 – Sep 2021 · Beijing, China</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section id="publications">
+        <h2><span class="emoji">📝</span>Selected Publications</h2>
+        <p class="pub-note">
+        For the full list and up-to-date citations, please check my Google Scholar.
         </p>
-        <p>
-          I once worked as a research intern in <a href="http://www.ict.cas.cn" target="blank_">Institute of Computing Technology</a> at the Chinese Academy of Sciences, and an algorithm intern in <a href="https://www.megvii.com" target="blank_"> MegVII Research</a>. I was very lucky to have a great research internship at <a href="https://www.msra.cn/" target="blank_"> Microsoft Research Asia </a>, worked with <a href="https://chenfei-wu.github.io/" target="blank_">Dr. Chenfei Wu</a> & <a href="https://nanduan.github.io/" target="blank_">Dr. Nan Duan</a>.
-        </p>
-        <p>
-          Currently, my research interests include
-        </p>
-        <ul>
-          <li><p>Multimodal Learning, especially Text + Vision.
-          </p>
+
+        <ol class="pub-list">
+          <li class="pub-item">
+            <div class="pub-title">
+              LiViBench: An Omnimodal Benchmark for Interactive Livestream Video Understanding
+              <span class="badge">AAAI 2026 · CCF A</span>
+            </div>
+            <div class="pub-authors">
+              <strong><u>Xiaodong Wang</u></strong>, Langling Huang, Zhirong Wu, Xu Zhao, Teng Xu, Xuhong Xia, Peixi Peng✉️
+            </div>
+            <div class="pub-venue">
+              AAAI 2026
+            </div>
           </li>
-          <li><p>Visual Synthesis, including image, video, 3D vision.
-          </p></li>
-          <li><p>Large Language Model + Vision. Let LLM have more powerful capabilities.
-          </p></li>
-        </ul>
-        <br>
-        <p>Involved Projects: <a href="https://github.com/microsoft/visual-chatgpt">Visual-ChatGPT</a>(AI Agent, GitHub 34k Star); <a href="https://msra-nuwa.azurewebsites.net/#/" target="blank_">NUWA-XL</a> (Text2Video); <a href="https://msra-nuwa.azurewebsites.net/#/NUWAInfinity" target="blank_">NUWA-Infinity</a> (Text2Image, Image2Video)</p>
-        
-        <h2>News</h2>
+          <li class="pub-item">
+            <div class="pub-title">
+              LongDWM: Cross-Granularity Distillation for Building a Long-Term Driving World Model
+              <span class="badge">AAAI 2026 · CCF A</span>
+            </div>
+            <div class="pub-authors">
+              <strong><u>Xiaodong Wang</u></strong>, Zhirong Wu, Peixi Peng✉️
+            </div>
+            <div class="pub-venue">
+              AAAI 2026
+            </div>
+            <div class="pub-links">
+              <a href="https://arxiv.org/abs/2506.01546" target="_blank">PDF</a>
+            </div>
+          </li>
+          <li class="pub-item">
+            <div class="pub-title">
+              Enhancing Zero-shot 3D Photography via Mesh-represented Image Inpainting
+              <span class="badge">ICME 2024 Oral · CCF B</span>
+            </div>
+            <div class="pub-authors">
+              Yuejian Fang*, <strong><u>Xiaodong Wang*</u></strong>✉️
+            </div>
+            <div class="pub-venue">
+              2024 IEEE International Conference on Multimedia and Expo (ICME)
+            </div>
+          </li>
 
-        <h2>Eduacation Experiences</h2>
-        
-          <table class="imgtable">
-            <tr>
-              <td>
-                <img src="assets/imgs/pku.png" alt="PKU's logo" width="70px"/>&nbsp;
-              </td>
-              <td align="left">
-                <p><strong style="margin-right: 30px;">Peking University</strong>Beijing, China<span class="date">Sep 2021 - Jul 2024 (expected)</span></p>
-                <p>M.S. in Software Engineering (<strong>Recommend Exam-free Admission</strong>)</p>
-                <p>GPA: 3.66/4.00</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img src="assets/imgs/bistu.jpg" alt="Bistu's logo" width="70px" height="70px" />&nbsp;
-              </td>
-              <td align="left">
-                <p><strong style="margin-right: 30px;">Beijing Information Science and Technology University</strong>Beijing, China<span class="date">Sep 2017 - Jul 2021</span></p>
-                <p>B.S. in Data Science</p>
-                <p>GPA: 4.43/5.00, ranking: 1/32</p>
-              </td>
-            </tr>
-          </table>
+          <li class="pub-item">
+            <div class="pub-title">
+              Learning Invariant Representation with Consistency and Diversity for Semi-supervised Source Hypothesis Transfer
+              <span class="badge">ICASSP 2024 · CCF B</span>
+            </div>
+            <div class="pub-authors">
+              <strong><u>Xiaodong Wang</u></strong>, Junbao Zhuo, Shuhao Cui, Shuhui Wang, Yuejian Fang
+            </div>
+            <div class="pub-venue">
+              IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2024
+            </div>
+          </li>
 
-        <h2 id="publication">Recent Publications</h2>
-        <ol>
-          <li><p><span style="color: brown">Learning Invariant Representation with Consistency and Diversity for Semi-supervised Source Hypothesis Transfer</span><br>
-          <strong><u>Xiaodong Wang</u></strong>, Junbao Zhuo, Shuhao Cui, Shuhui Wang, Yuejian Fang<br>
-          ICASSP 2024, CCF B<br>
-          </p></li>
-        <li><p><span style="color: brown">ORES: Open-vocabulary Responsible Visual Synthesis</span><br>
-          Minheng Ni, Chenfei Wu, <strong><u>Xiaodong Wang</u></strong>, Shengming Yin, Lijuan Wang, Zicheng Liu, Nan Duan  <br>
-          AAAI 2024, CCF A<br>
-          [<a href="https://arxiv.org/abs/2308.13785" target="blank_">pdf</a>] [<a href="https://github.com/kodenii/ores" target="blank_"></><strong>Github</strong></a>]
-        </p></li>
-        <li><p><span style="color: brown">Learning 3D Photography Videos via Self-supervised Diffusion on Single Images (NUWA-3D)</span><br>
-          <strong><u>Xiaodong Wang</u></strong>, Chenfei Wu, Shengming Yin, Minheng Ni, Jianfeng Wang, Linjie Li, Zhengyuan Yang, Fan Yang, Lijuan Wang, Zicheng Liu, Yuejian Fang, Nan Duan<br>
-          The 32nd International Joint Conference on Artificial Intelligence (IJCAI'23), CCF A <br>
-          [<a href="https://www.ijcai.org/proceedings/2023/167" target="blank_">pdf</a>] [<a href="assets/IJCAI23_supple.pdf">suppl</a>]
-        </p></li>
-        <li><p><span style="color: brown">NUWA-XL: Diffusion over Diffusion for eXtremely Long Video Generation</span><br>
-          Shengming Yin, Chenfei Wu, Huan Yang, Jianfeng Wang, <strong><u>Xiaodong Wang</u></strong>, Minheng Ni, Zhengyuan Yang, Linjie Li, Shuguang Liu, Fan Yang, Jianlong Fu, Gong Ming, Lijuan Wang, Zicheng Liu, Houqiang Li, Nan Duan <br>
-          The 61st Annual Meeting of the Association for Computational Linguistics (ACL'23), ORAL, CCF A<br>
-          [<a href="https://aclanthology.org/2023.acl-long.73/" target="blank_">pdf</a>] [<a href="https://msra-nuwa.azurewebsites.net/#/" target="blank_">homepage</a>]
-        </p></li>
-        <li><p><span style="color: brown">Visual ChatGPT: Talking, Drawing and Editing with Visual Foundation Models</span><br>
-          Chenfei Wu, Shengming Yin, Weizhen Qi, <strong><u>Xiaodong Wang</u></strong>, Zecheng Tang, Nan Duan  <br>
-          Preprint, 2023.03<br>
-          [<a href="https://arxiv.org/abs/2303.04671" target="blank_">pdf</a>] [<a href="https://github.com/microsoft/TaskMatrix" target="blank_"></><strong>Github 34K Star</strong></a>] [<a>100+ citation</a>]
-        </p></li>
-        <li><p><span style="color: brown">Revisiting Unsupervised Domain Adaptation Models: a Smoothness Perspective</span><br>
-          <strong><u>Xiaodong Wang</u></strong>, Junbao Zhuo, Mengru Zhang, Shuhui Wang, Yuejian Fang<br>
-          The 16th Asian Conference on Computer Vision (ACCV'22), CCF C<br>
-          [<a href="https://openaccess.thecvf.com/content/ACCV2022/html/Wang_Revisiting_Unsupervised_Domain_Adaptation_Models_a_Smoothness_Perspective_ACCV_2022_paper.html" target="blank_">pdf</a>]
-           [<a href="https://github.com/Wang-Xiaodong1899/LeCo_UDA" target="blank_">code</a>]
-        </p></li>
-        <li><p><span style="color: brown">Learning Invariant Representation with Consistency and Diversity for Semi-supervised Source Hypothesis Transfer</span><br>
-          <strong><u>Xiaodong Wang</u></strong>, Junbao Zhuo, Shuhao Cui, Shuhui Wang<br>
-          Preprint, 2021.07<br>
-          [<a href="https://arxiv.org/abs/2107.03008" target="blank_">pdf</a>] [<a href="https://github.com/Wang-Xiaodong1899/SSHT" target="blank_">code</a>]
-        </p></li>
-        <li><p><span style="color: brown">
-Background Cleaning and Direction Weight in Salient Object Detection</span><br>
-          <strong><u>Xiaodong Wang</u></strong>, Xiaoming Huang<br>
-          Chinese Conference on Pattern Recognition and Computer Vision 2020 (PRCV'20), CCF C<br>
-          [<a href="https://link.springer.com/chapter/10.1007/978-3-030-60633-6_58
-        
-        
-        
-        
-        
-        
-        
-        " target="blank_">pdf</a>]
-        </p></li>
+          <li class="pub-item">
+            <div class="pub-title">
+              Learning 3D Photography Videos via Self-supervised Diffusion on Single Images (NUWA-3D)
+              <span class="badge">IJCAI 2023 · CCF A</span>
+            </div>
+            <div class="pub-authors">
+              <strong><u>Xiaodong Wang</u></strong>, Chenfei Wu, Shengming Yin, Minheng Ni, Jianfeng Wang,
+              Linjie Li, Zhengyuan Yang, Fan Yang, Lijuan Wang, Zicheng Liu, Yuejian Fang, Nan Duan
+            </div>
+            <div class="pub-venue">
+              The 32nd International Joint Conference on Artificial Intelligence (IJCAI'23), 2023
+            </div>
+            <div class="pub-links">
+              <a href="https://www.ijcai.org/proceedings/2023/167" target="_blank">PDF</a>
+              <a href="assets/IJCAI23_supple.pdf" target="_blank">Supplement</a>
+            </div>
+          </li>
 
+          <li class="pub-item">
+            <div class="pub-title">
+              Visual ChatGPT: Talking, Drawing and Editing with Visual Foundation Models
+              <span class="badge">Preprint · 900+ citations</span>
+            </div>
+            <div class="pub-authors">
+              Chenfei Wu, Shengming Yin, Weizhen Qi, <strong><u>Xiaodong Wang</u></strong>, Zecheng Tang, Nan Duan
+            </div>
+            <div class="pub-venue">
+              Preprint, March 2023
+            </div>
+            <div class="pub-links">
+              <a href="https://arxiv.org/abs/2303.04671" target="_blank">arXiv</a>
+              <a href="https://github.com/microsoft/TaskMatrix" target="_blank">GitHub (34k⭐)</a>
+            </div>
+          </li>
+
+          <li class="pub-item">
+            <div class="pub-title">
+              ORES: Open-vocabulary Responsible Visual Synthesis
+              <span class="badge">AAAI 2024 · CCF A</span>
+            </div>
+            <div class="pub-authors">
+              Minheng Ni, Chenfei Wu, <strong><u>Xiaodong Wang</u></strong>, Shengming Yin, Lijuan Wang, Zicheng Liu, Nan Duan
+            </div>
+            <div class="pub-venue">
+              AAAI Conference on Artificial Intelligence, 2024
+            </div>
+            <div class="pub-links">
+              <a href="https://arxiv.org/abs/2308.13785" target="_blank">PDF</a>
+              <a href="https://github.com/kodenii/ores" target="_blank">Code</a>
+            </div>
+          </li>
+
+          <li class="pub-item">
+            <div class="pub-title">
+              NUWA-XL: Diffusion over Diffusion for eXtremely Long Video Generation
+              <span class="badge">ACL 2023 · Oral · CCF A</span>
+            </div>
+            <div class="pub-authors">
+              Shengming Yin, Chenfei Wu, Huan Yang, Jianfeng Wang, <strong><u>Xiaodong Wang</u></strong>,
+              Minheng Ni, Zhengyuan Yang, Linjie Li, Shuguang Liu, Fan Yang, Jianlong Fu, Gong Ming,
+              Lijuan Wang, Zicheng Liu, Houqiang Li, Nan Duan
+            </div>
+            <div class="pub-venue">
+              The 61st Annual Meeting of the Association for Computational Linguistics (ACL'23), Oral
+            </div>
+            <div class="pub-links">
+              <a href="https://aclanthology.org/2023.acl-long.73/" target="_blank">PDF</a>
+              <a href="https://msra-nuwa.azurewebsites.net/#/" target="_blank">Project page</a>
+            </div>
+          </li>
+
+          <li class="pub-item">
+            <div class="pub-title">
+              Revisiting Unsupervised Domain Adaptation Models: a Smoothness Perspective
+              <span class="badge">ACCV 2022 · CCF C</span>
+            </div>
+            <div class="pub-authors">
+              <strong><u>Xiaodong Wang</u></strong>, Junbao Zhuo, Mengru Zhang, Shuhui Wang, Yuejian Fang
+            </div>
+            <div class="pub-venue">
+              The 16th Asian Conference on Computer Vision (ACCV'22), 2022
+            </div>
+            <div class="pub-links">
+              <a href="https://openaccess.thecvf.com/content/ACCV2022/html/Wang_Revisiting_Unsupervised_Domain_Adaptation_Models_a_Smoothness_Perspective_ACCV_2022_paper.html" target="_blank">PDF</a>
+              <a href="https://github.com/Wang-Xiaodong1899/LeCo_UDA" target="_blank">Code</a>
+            </div>
+          </li>
+
+          <li class="pub-item">
+            <div class="pub-title">
+              Background Cleaning and Direction Weight in Salient Object Detection
+              <span class="badge">PRCV 2020 · CCF C</span>
+            </div>
+            <div class="pub-authors">
+              <strong><u>Xiaodong Wang</u></strong>, Xiaoming Huang
+            </div>
+            <div class="pub-venue">
+              Chinese Conference on Pattern Recognition and Computer Vision (PRCV'20), 2020
+            </div>
+            <div class="pub-links">
+              <a href="https://link.springer.com/chapter/10.1007/978-3-030-60633-6_58" target="_blank">PDF</a>
+            </div>
+          </li>
         </ol>
+      </section>
 
-          <h2>Professional Experiences</h2>
-        
-          <table class="imgtable">
-            <tr>
-              <td>
-                <img src="assets/imgs/msft.png" alt="Msft's logo" width="70px"/>&nbsp;
-              </td>
-              <td align="left">
-                <p><strong style="margin-right: 30px;">Microsoft Research Asia.</strong>Beijing, China</p>
-                <p>Research Intern, supervised by <a href="https://chenfei-wu.github.io/" target="blank_">Chenfei Wu</a> & <a href="https://nanduan.github.io/" target="blank_">Nan Duan</a>, Natural Language Computing Group. <span class="date">May 2022 - Nov 2023</span></p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img src="assets/imgs/megvii.png" alt="megvii's logo" width="70px"/>&nbsp;
-              </td>
-              <td align="left">
-                <p><strong style="margin-right: 30px;">MEGVII.</strong>Beijing, China</p>
-                <p>Algorithm Intern at MegVII Research, Face Detection Team. <span class="date">June 2021 - Sep 2021</span></p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img src="assets/imgs/ict.png" alt="ICT's logo" width="70px" height="70px" />&nbsp;
-              </td>
-              <td align="left">
-                <p><strong style="margin-right: 30px;">Institute of Computing Technology, Chinese Academy of Sciences</strong>Beijing, China</p>
-                <p>Research Intern at the <a href="http://vipl.ict.ac.cn/" target="blank_">VIPL</a> team, supervised by <a href="https://vipl.ict.ac.cn/people/shwang/" target="_blank">Prof. Shuhui Wang</a>. <span class="date">Dec 2020 - May 2021</span></p>
-              </td>
-            </tr>
-          </table>
-
-        <h2>Selected Awards</h2>
-        <ul>
-          <li>MSRA Stars of Tomorrow (Award of Excellent Intern) <span class="date">2023</span></li>
-          <li>Merit Student, Peking University<span class="date">2022</span></li>
-          <li>ACCV 2022 Student Travel Grants<span class="date">2022</span></li>
-          <li>Beijing Outstanding Graduates<span class="date">2021</span></li>
-          <li>President Scholarship (Highest Student Honor in BISTU) <span class="date">2020</span></li>
-          <li>Outstanding Student, BISTU <span class="date">2018 & 2019 & 2020</span></li>
-          <li>National Encouragement Scholarship <span class="date">2019</span> </li>
-          <li> Third prize of the 11th National Undergraduate Mathematics Contest (non-mathematics) <span class="date">2019</span></li>
-          <li> Second prize of the 2019 Asia and Pacific Mathmatical Contest in Modeling <span class="date">2019</span></li>
-          <li> Second Prize in International Underwater Robot Competition <span class="date">2019</span></li>
-          <li>National Scholarship <span class="date">2018</span></li>
+      <section id="awards">
+        <h2><span class="emoji">🏅</span>Awards</h2>
+        <ul class="award-list">
+          <li>
+            <span>MSRA Stars of Tomorrow (Award of Excellent Intern)</span>
+            <span class="award-year">2023</span>
+          </li>
+          <li>
+            <span>Merit Student, Peking University</span>
+            <span class="award-year">2022</span>
+          </li>
+          <li>
+            <span>Beijing Outstanding Graduates</span>
+            <span class="award-year">2021</span>
+          </li>
+          <li>
+            <span>President Scholarship (Highest Student Honor in BISTU)</span>
+            <span class="award-year">2020</span>
+          </li>
+          <li>
+            <span>National Scholarship</span>
+            <span class="award-year">2018</span>
+          </li>
         </ul>
+      </section>
 
-        <h2>Services</h2>
-        <p>Reviewer: ACCV 2022.<br> </p>
-        <p>Membership: Student member of <a href="https://www.ccf.org.cn" target="blank_">CCF</a>, Student member of <a href="https://www.csig.org.cn" target="blank_">Chinese Society of Image and Graphics</a>.
-        
+      <section id="service">
+        <h2><span class="emoji">🤝</span>Service</h2>
+        <p><strong>Reviewer</strong></p>
+        <ul>
+          <li>NeurIPS, ICML, ICLR, CVPR, AAAI</li>
+        </ul>
+      </section>
+    </main>
 
-        <br />
-      </td>
-    </tr>
-  </table>
+    <footer>
+      Last updated by Xiaodong Wang · Hosted on GitHub Pages
+    </footer>
+  </div>
 </body>
 </html>
