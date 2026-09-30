@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f7f8f4">
+<meta name="description" content="SimForcing transfers simulation motion priors to real-domain robot world models through latent-motion distillation and controllable simulation conditioning.">
+<title>SimForcing · Simulation Motion, Real-World Prediction</title>
+<link rel="icon" href="assets/pku-seal.png" type="image/png">
+<link rel="stylesheet" href="style.css?v=teaser-compact-2"><script defer src="data.js"></script><script defer src="app.js"></script>
+</head>
+<body>
+<a href="#results" class="skip-link">Skip to video comparisons</a>
+<header class="site-header"><a class="wordmark" href="#top"><img class="pku-logo" src="assets/pku-seal.png" alt="Peking University" width="38" height="38">SimForcing</a><nav aria-label="Main navigation"><a href="#method">Method</a><a href="#results">Comparisons <span class="nav-dot"></span></a></nav></header>
+<main id="top">
+<section class="hero container">
+<h1>Sim<span>Forcing</span></h1>
+<h2>Distilling Simulation Motion Priors<br class="desktop-break"> into Real-Domain Robot World Models</h2>
+<p class="authors"><a href="https://wang-xiaodong1899.github.io/" target="_blank" rel="noopener noreferrer">Xiaodong Wang</a> <span>·</span> Tianle Li <span>·</span> Chuanxin Song <span>·</span> Junliang Xie <span>·</span> Zhanmi Zhong <span>·</span> Suiying Wu <span>·</span> Peixi Peng</p>
+<p class="affiliation">Peking University</p>
+<div class="hero-actions"><a class="button primary" href="https://wang-xiaodong1899.github.io/assets/SimForcing.pdf" target="_blank" rel="noopener noreferrer">Paper <span>↗</span></a><a class="button secondary" href="https://github.com/Wang-Xiaodong1899/SimForcing" target="_blank" rel="noopener noreferrer">GitHub <span>↗</span></a></div>
+</section>
+<figure class="paper-teaser container">
+<a href="assets/teaser.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size paper teaser"><img src="assets/teaser.png" width="2400" height="678" alt="Comparison of training paradigms for action-conditioned robot world models: direct training on real videos, training with explicit visual priors, and SimForcing motion-prior distillation from a simulation world model." fetchpriority="high"></a>
+<figcaption><strong>From simulation motion to real-world prediction.</strong> SimForcing distills motion priors from a simulation world model into a real-domain robot world model through latent-space motion supervision.</figcaption>
+</figure>
+<section class="teaser container" aria-label="Simulation and real prediction example">
+<div class="teaser-heading"><div><span class="eyebrow">ONE STUDENT. TWO DOMAINS.</span><h3>From motion priors to visual prediction.</h3></div><button id="heroPlay" class="small-button" aria-pressed="true">Ⅱ Pause</button></div>
+<div id="heroMedia" class="hero-media"></div>
+<div class="teaser-caption"><span id="heroInstruction"></span><a href="#results">Explore the galleries ↗</a></div>
+</section>
+<section id="method" class="method-section container">
+<div class="section-heading"><div class="section-index">01 / THE METHOD</div><div><h2>Distill motion.<br>Guide generation.</h2><p>Simulation provides structured robot motion, but its appearance differs from real video. SimForcing transfers temporal changes in latent space and uses predicted simulation latents as an adjustable reference for real-domain prediction.</p></div></div>
+<div class="principles">
+<article><span class="step-number">01</span><h3>Learn in simulation</h3><p>Replay and perturb robot action trajectories to train a simulation world model. Video and action transformers interact through Mixture-of-Transformers attention.</p></article>
+<article><span class="step-number">02</span><h3>Distill motion priors</h3><p>A frozen simulation teacher supervises changes between adjacent video latents. The student learns motion knowledge while training on both simulation and real videos.</p></article>
+<article><span class="step-number">03</span><h3>Control the guidance</h3><p>Simulation latents enter multiple transformer blocks with condition dropout. At inference, classifier-free guidance balances the student's internal motion priors and predicted simulation conditions.</p></article>
+</div>
+<figure class="method-figure"><a href="assets/method.png" target="_blank" rel="noopener" aria-label="Open full-size method figure"><img src="assets/method.png" alt="SimForcing training: a simulation world model initializes and supervises a student through latent motion distillation, multi-block simulation conditioning, and flow matching in both domains." loading="lazy"></a><figcaption><strong>Training overview.</strong> The simulation teacher is used during training. The final student generates its own simulation conditions and real-domain predictions at inference.</figcaption></figure>
+<div class="inference"><div class="inference-title"><span class="eyebrow">AT INFERENCE</span><h3>A shared model, two passes.</h3></div><div class="inference-flow"><div>Initial observation<br><small>+ action trajectory</small></div><span aria-hidden="true">→</span><div class="sim-step">Simulation prediction<br><small>student · condition off</small></div><span aria-hidden="true">→</span><div class="real-step">Real-world prediction<br><small>same student · guided</small></div></div></div>
+</section>
+<section id="results" class="results-section container">
+<div class="section-heading"><div class="section-index">02 / QUALITATIVE RESULTS</div><div><h2>See SimForcing in action.</h2></div></div>
+<div id="comparisons"><p class="loading-note">Loading galleries…</p></div>
+<noscript><p>Enable JavaScript to browse the video galleries.</p></noscript>
+</section>
+</main>
+<footer class="container"><a class="wordmark" href="#top"><span class="footer-tag"></span></a><a href="#top">Back to top ↑</a></footer>
+<dialog id="videoDialog"><div class="dialog-head"><div><span class="eyebrow" id="dialogDataset"></span><h2 id="dialogTitle"></h2></div><div class="dialog-actions"><button id="dialogPlay" class="small-button" aria-label="Play or pause video">Ⅱ</button><button id="closeDialog" class="small-button" aria-label="Close video">✕</button></div></div><video id="inspectVideo" muted playsinline loop></video><p id="dialogInstruction"></p><a id="downloadVideo" download class="download-link">Download MP4 ↓</a></dialog>
+<div id="notice" role="status" aria-live="polite"></div>
+</body>
+</html>
